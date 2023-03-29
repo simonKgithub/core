@@ -13,22 +13,24 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class AppConfig {
-    //MemberService 역할 => 구현체
     @Bean
     public MemberService memberService(){
+        //호출로그 추가 : 테스트에서 1번 쓰이게 될 것이다.
+        System.out.println("call AppConfig.memberService");
         return new MemberServiceImpl(memberRepository());
     }
-    //MemberRepository 역할 => 구현체
     @Bean
     public MemoryMemberRepository memberRepository() {
+        //호출로그 추가 : 테스트에서 2번..? 쓰이게 되려나..?
+        System.out.println("call AppConfig.memberRepository");
         return new MemoryMemberRepository();
     }
-    //OrderService 역할 => 구현체
     @Bean
     public OrderService orderService(){
+        //호출로그 추가 : 테스트에서 1번 쓰이게 될 것이다.
+        System.out.println("call AppConfig.orderService");
         return new OrderServiceImpl(memberRepository(),discountPolicy());
     }
-    //DiscountPolicy 역할 => 구현체
     @Bean
     public DiscountPolicy discountPolicy(){
 //        return new FixDiscountPolicy();
