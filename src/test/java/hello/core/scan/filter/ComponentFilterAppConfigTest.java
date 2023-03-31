@@ -17,8 +17,10 @@ public class ComponentFilterAppConfigTest {
     @Configuration
     @ComponentScan(
             includeFilters = @Filter(type = FilterType.ANNOTATION, classes = MyIncludeComponent.class)
+//            ,excludeFilters =
+//            {@Filter(type = FilterType.ANNOTATION, classes = MyExcludeComponent.class), @Filter(type = FilterType.ASSIGNABLE_TYPE, classes = BeanA.class)}
             ,excludeFilters =
-            {@Filter(type = FilterType.ANNOTATION, classes = MyExcludeComponent.class), @Filter(type = FilterType.ASSIGNABLE_TYPE, classes = BeanA.class)}
+            {@Filter(type = FilterType.ANNOTATION, classes = MyExcludeComponent.class)}
     )
     static class ComponentFilterAppConfig{
 

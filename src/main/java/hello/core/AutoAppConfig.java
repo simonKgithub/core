@@ -13,8 +13,9 @@ import org.springframework.context.annotation.FilterType;
 @Filter(type = FilterType.ANNOTATION, classes = Configuration.class))
 public class AutoAppConfig {
 
+    /* 온전한 테스트 실행을 위해 주석처리
     @Bean(name = "memoryMemberRepository")
     public MemberRepository memberRepository(){
         return new MemoryMemberRepository();
-    }
+    }*/
 }
