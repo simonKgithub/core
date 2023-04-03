@@ -29,8 +29,8 @@ public class AppConfig {
     public OrderService orderService(){
         //호출로그 추가 : 테스트에서 1번 쓰이게 될 것이다.
         System.out.println("call AppConfig.orderService");
-        return null;
-//        return new OrderServiceImpl(memberRepository(),discountPolicy());
+//        return null;
+        return new OrderServiceImpl(memberRepository(),discountPolicy());
     }
     @Bean
     public DiscountPolicy discountPolicy(){
